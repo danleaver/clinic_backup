@@ -1,0 +1,12 @@
+<h1>Physicians</h1>
+<p>Select A Doctor</p>
+
+<% @physicians.each do |doctor| %>
+    <ul>
+    <%= link_to doctor.name, doctor %>
+    
+    </ul>
+<% end %>
+
+<%= link_to 'New Doctor', new_physician_path %>
+

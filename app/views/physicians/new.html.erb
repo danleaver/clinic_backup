@@ -1,0 +1,9 @@
+<h1>Add Physician</h1>
+<%# form_with(model: @course, local: true, class: 'ui form') do |f| %>
+
+<%= form_for @physician do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, placeholder: 'Physician name' %>
+
+  <%= f.submit nil, class: 'ui blue button' %>
+<% end %>

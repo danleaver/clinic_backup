@@ -1,0 +1,19 @@
+<h1>Create New Appointment for <%= @physician.name %></h1>
+
+  <%= form_with(model: [@physician, @appointment], local: true, class: 'ui form') do |f| %>
+    <div class="field">
+    <%= f.label :patient %>
+    <%= f.select :patient_id, @patients.collect { |u| [u.name, u.id] } %>
+    <%= link_to 'New Patient', new_patient_path %>
+    </div>
+
+    <div class="field">
+    <%= f.label :date %>
+    <%= f.date_field :appointment_date, required: true, placeholder: 'put in a date' %>
+    </div>
+    <%= f.submit nil, class: 'ui purple button' %>
+
+    <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+<% end %>

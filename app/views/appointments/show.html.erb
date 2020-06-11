@@ -1,0 +1,17 @@
+<h1>Appointment for  
+<%= (@patients.find(@appointment.patient_id)).name %>
+</h1>
+
+
+
+with <%= (@physicians.find(@appointment.physician_id)).name %>
+
+
+<br />
+<br />
+This appointment is scheduled for: 
+<%= @appointment.appointment_date.to_date %>
+<br />
+
+<br />
+<%= link_to 'Edit Appointment',  edit_physician_appointment_path, class: 'ui blue button'	%>
